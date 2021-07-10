@@ -80,16 +80,17 @@ move = 0
 
 while True:
     enter_move(board)
-    draw_move(board)
     move += 1
-    if (victory_for(board, "X")):
-        print("You lose sucker!")
-        break
-    elif (victory_for(board, "o")):
-        print("You won!")
+    if (victory_for(board, "o")):
+        print("You Win!")
         break
     elif (move >= 5):
         print("Game over!")
+        break
+    else:
+        draw_move(board)
+    if (victory_for(board, "X")):
+        print("You lose!")
         break
     else:
         continue
